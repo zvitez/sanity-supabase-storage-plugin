@@ -1,0 +1,75 @@
+{
+  "name": "sanity-plugin-supabase-storage",
+  "version": "1.0.0",
+  "description": "Manage Supabase storage",
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "homepage": "https://github.com/zvitez/sanity-supabase-storage-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/zvitez/sanity-supabase-storage-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zvitez/sanity-supabase-storage-plugin.git"
+  },
+  "license": "MIT",
+  "author": "zvitez <zvitez@gmail.com>",
+  "sideEffects": false,
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
+  "scripts": {
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "watch": "pkg-utils watch --strict"
+  },
+  "dependencies": {
+    "@sanity/incompatible-plugin": "^1.0.4"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^6.10.0",
+    "@sanity/plugin-kit": "^4.0.17",
+    "@types/react": "^18.3.3",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^9.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-sanity": "^7.1.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^3.3.2",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.47.1",
+    "styled-components": "^5.3.11",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "sanity": "^3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
